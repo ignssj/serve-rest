@@ -1,0 +1,1 @@
+{"uuid":"5279e563-af0f-422b-927e-f24d82fbec0e","name":"deveFalharPostPorSenhaFraca()","children":["c2d7b923-097f-4faa-aca2-8a225deef03c"],"befores":[],"afters":[{"name":"deletarUsuario","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1668025415822,"stop":1668025415840}],"start":1668025415796,"stop":1668025415843}

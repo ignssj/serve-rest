@@ -1,0 +1,1 @@
+{"uuid":"9ca3dde3-26d8-4e8b-8cce-2bc31c879eee","name":"deveFalharPostPorCamposVazios()","children":["0d333107-a92a-439e-9231-34c9949b85f9"],"befores":[],"afters":[{"name":"deletarUsuario","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1668025415691,"stop":1668025415691}],"start":1668025415636,"stop":1668025415692}

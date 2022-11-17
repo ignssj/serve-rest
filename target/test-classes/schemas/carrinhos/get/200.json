@@ -1,0 +1,212 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "default": {},
+  "title": "Root Schema",
+  "required": [
+    "quantidade",
+    "carrinhos"
+  ],
+  "properties": {
+    "quantidade": {
+      "type": "integer",
+      "default": 0,
+      "title": "The quantidade Schema",
+      "examples": [
+        1
+      ]
+    },
+    "carrinhos": {
+      "type": "array",
+      "default": [],
+      "title": "The carrinhos Schema",
+      "items": {
+        "type": "object",
+        "default": {},
+        "title": "A Schema",
+        "required": [
+          "produtos",
+          "precoTotal",
+          "quantidadeTotal",
+          "idUsuario",
+          "_id"
+        ],
+        "properties": {
+          "produtos": {
+            "type": "array",
+            "default": [],
+            "title": "The produtos Schema",
+            "items": {
+              "type": "array",
+              "default": [],
+              "title": "A Schema",
+              "items": {
+                "type": "object",
+                "title": "A Schema",
+                "required": [
+                  "idProduto",
+                  "quantidade",
+                  "precoUnitario"
+                ],
+                "properties": {
+                  "idProduto": {
+                    "type": "string",
+                    "title": "The idProduto Schema",
+                    "examples": [
+                      "BeeJh5lz3k6kSIzA",
+                      "K6leHdftCeOJj8BJ"
+                    ]
+                  },
+                  "quantidade": {
+                    "type": "integer",
+                    "title": "The quantidade Schema",
+                    "examples": [
+                      1,
+                      2
+                    ]
+                  },
+                  "precoUnitario": {
+                    "type": "integer",
+                    "title": "The precoUnitario Schema",
+                    "examples": [
+                      470,
+                      5240
+                    ]
+                  }
+                },
+                "examples": [{
+                  "idProduto": "BeeJh5lz3k6kSIzA",
+                  "quantidade": 1,
+                  "precoUnitario": 470
+                },
+                  {
+                    "idProduto": "K6leHdftCeOJj8BJ",
+                    "quantidade": 2,
+                    "precoUnitario": 5240
+                  }]
+              },
+              "examples": [
+                [{
+                  "idProduto": "BeeJh5lz3k6kSIzA",
+                  "quantidade": 1,
+                  "precoUnitario": 470
+                },
+                  {
+                    "idProduto": "K6leHdftCeOJj8BJ",
+                    "quantidade": 2,
+                    "precoUnitario": 5240
+                  }]
+              ]
+            },
+            "examples": [
+              [
+                [{
+                  "idProduto": "BeeJh5lz3k6kSIzA",
+                  "quantidade": 1,
+                  "precoUnitario": 470
+                },
+                  {
+                    "idProduto": "K6leHdftCeOJj8BJ",
+                    "quantidade": 2,
+                    "precoUnitario": 5240
+                  }]
+              ]
+            ]
+          },
+          "precoTotal": {
+            "type": "integer",
+            "default": 0,
+            "title": "The precoTotal Schema",
+            "examples": [
+              10950
+            ]
+          },
+          "quantidadeTotal": {
+            "type": "integer",
+            "default": 0,
+            "title": "The quantidadeTotal Schema",
+            "examples": [
+              3
+            ]
+          },
+          "idUsuario": {
+            "type": "string",
+            "default": "",
+            "title": "The idUsuario Schema",
+            "examples": [
+              "oUb7aGkMtSEPf6BZ"
+            ]
+          },
+          "_id": {
+            "type": "string",
+            "default": "",
+            "title": "The _id Schema",
+            "examples": [
+              "aFOUqntef4iaOwWfg"
+            ]
+          }
+        },
+        "examples": [{
+          "produtos": [
+            [{
+              "idProduto": "BeeJh5lz3k6kSIzA",
+              "quantidade": 1,
+              "precoUnitario": 470
+            },
+              {
+                "idProduto": "K6leHdftCeOJj8BJ",
+                "quantidade": 2,
+                "precoUnitario": 5240
+              }]
+          ],
+          "precoTotal": 10950,
+          "quantidadeTotal": 3,
+          "idUsuario": "oUb7aGkMtSEPf6BZ",
+          "_id": "aFOUqntef4iaOwWfg"
+        }]
+      },
+      "examples": [
+        [{
+          "produtos": [
+            [{
+              "idProduto": "BeeJh5lz3k6kSIzA",
+              "quantidade": 1,
+              "precoUnitario": 470
+            },
+              {
+                "idProduto": "K6leHdftCeOJj8BJ",
+                "quantidade": 2,
+                "precoUnitario": 5240
+              }]
+          ],
+          "precoTotal": 10950,
+          "quantidadeTotal": 3,
+          "idUsuario": "oUb7aGkMtSEPf6BZ",
+          "_id": "aFOUqntef4iaOwWfg"
+        }]
+      ]
+    }
+  },
+  "examples": [{
+    "quantidade": 1,
+    "carrinhos": [{
+      "produtos": [
+        [{
+          "idProduto": "BeeJh5lz3k6kSIzA",
+          "quantidade": 1,
+          "precoUnitario": 470
+        },
+          {
+            "idProduto": "K6leHdftCeOJj8BJ",
+            "quantidade": 2,
+            "precoUnitario": 5240
+          }]
+      ],
+      "precoTotal": 10950,
+      "quantidadeTotal": 3,
+      "idUsuario": "oUb7aGkMtSEPf6BZ",
+      "_id": "aFOUqntef4iaOwWfg"
+    }]
+  }]
+}

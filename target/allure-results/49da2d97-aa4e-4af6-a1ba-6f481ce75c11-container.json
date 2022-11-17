@@ -1,0 +1,1 @@
+{"uuid":"49da2d97-aa4e-4af6-a1ba-6f481ce75c11","name":"deveCadastrarPostComSucesso()","children":["07d45bc0-1f0d-442f-af57-00d3a80d5aa6"],"befores":[],"afters":[{"name":"deletarUsuario","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1668025415729,"stop":1668025415748}],"start":1668025415694,"stop":1668025415749}

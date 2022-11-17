@@ -1,0 +1,1 @@
+{"uuid":"6ff71d77-6816-4610-a0a0-437a9e5bab14","name":"deveFalharPostBodyVazio()","children":["c0cfc463-1614-4ec8-87fc-ca7f2c414506"],"befores":[],"afters":[{"name":"deletarUsuario","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1668025416026,"stop":1668025416026}],"start":1668025415973,"stop":1668025416028}
