@@ -1,15 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: tests.Usuarios.Put.UsuarioPutTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 4.281 s <<< FAILURE! - in tests.Usuarios.Put.UsuarioPutTest
-tests.Usuarios.Put.UsuarioPutTest.deveFalharPutSenhaCurta  Time elapsed: 0.512 s  <<< FAILURE!
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.24 s <<< FAILURE! - in tests.Usuarios.Put.UsuarioPutTest
+tests.Usuarios.Put.UsuarioPutTest.deveFalharPutSenhaCurta  Time elapsed: 0.014 s  <<< FAILURE!
 java.lang.AssertionError: 
 
 Expected: is <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at tests.Usuarios.Put.UsuarioPutTest.deveFalharPutSenhaCurta(UsuarioPutTest.java:92)
+	at tests.Usuarios.Put.UsuarioPutTest.deveFalharPutSenhaCurta(UsuarioPutTest.java:96)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -83,14 +83,14 @@ Expected: is <400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-tests.Usuarios.Put.UsuarioPutTest.deveFalharPutSenhaGrande  Time elapsed: 0.45 s  <<< FAILURE!
+tests.Usuarios.Put.UsuarioPutTest.deveFalharPutSenhaGrande  Time elapsed: 0.013 s  <<< FAILURE!
 java.lang.AssertionError: 
 
 Expected: is <400>
      but: was <200>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at tests.Usuarios.Put.UsuarioPutTest.deveFalharPutSenhaGrande(UsuarioPutTest.java:83)
+	at tests.Usuarios.Put.UsuarioPutTest.deveFalharPutSenhaGrande(UsuarioPutTest.java:86)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)

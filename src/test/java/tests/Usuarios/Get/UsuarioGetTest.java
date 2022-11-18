@@ -6,6 +6,7 @@ import io.restassured.response.Response;
 import template.TemplateGeral;
 import models.Usuario;
 import org.junit.jupiter.api.*;
+import template.TemplateUsuarios;
 
 
 import static helper.ServiceHelper.matcherJsonSchema;
@@ -16,7 +17,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static constants.EndpointsPaths.*;
 
-public class UsuarioGetTest extends TemplateGeral {
+public class UsuarioGetTest extends TemplateUsuarios {
     private static Faker faker = new Faker(Locale.ENGLISH);
     private static Usuario user;
 

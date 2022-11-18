@@ -37,7 +37,7 @@ public class ProdutoPostTest extends TemplateProdutos {
         assertThat(response.statusCode(), is(201));
         user.set_id(response.then().extract().path("_id"));
 
-        Login login = new Login(user.getEmail(), user.getPassword());
+        Login login = Login.of(user.getEmail(), user.getPassword());
 
         response = post(LOGIN_ENDPOINT, login);
         assertThat(response.statusCode(), is(200));
@@ -113,7 +113,7 @@ public class ProdutoPostTest extends TemplateProdutos {
        assertThat(response.statusCode(),is(201));
        falseAdm.set_id(response.then().extract().path("_id"));
 
-        Login login = new Login(falseAdm.getEmail(),falseAdm.getPassword());
+        Login login = Login.of(falseAdm.getEmail(),falseAdm.getPassword());
 
         response = post(LOGIN_ENDPOINT,login);
         assertThat(response.statusCode(),is(200));

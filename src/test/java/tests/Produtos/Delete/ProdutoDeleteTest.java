@@ -31,7 +31,7 @@ public class ProdutoDeleteTest extends TemplateProdutos {
         String idExtraido = response.then().extract().path("_id");
         assertThat(response.statusCode(),is(201));
         user.set_id(idExtraido);
-        Login login = new Login(user.getEmail(),user.getPassword());
+        Login login = Login.of(user.getEmail(),user.getPassword());
         response = post(LOGIN_ENDPOINT,login);
         assertThat(response.statusCode(),is(200));
         assertThat(response.body().path("message"),equalTo("Login realizado com sucesso"));
@@ -76,7 +76,7 @@ public class ProdutoDeleteTest extends TemplateProdutos {
         Response response = post(USUARIOS_ENDPOINT,naoADM);
         assertThat(response.statusCode(),is(201));
         naoADM.set_id(response.then().extract().path("_id"));
-        Login login = new Login(naoADM.getEmail(),naoADM.getPassword());
+        Login login = Login.of(naoADM.getEmail(),naoADM.getPassword());
 
         response = post(LOGIN_ENDPOINT,login);
         assertThat(response.statusCode(),is(200));

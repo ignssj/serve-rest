@@ -6,7 +6,7 @@
   "title": "Root Schema",
   "required": [
     "quantidade",
-    "produtos"
+    "usuarios"
   ],
   "properties": {
     "quantidade": {
@@ -17,10 +17,10 @@
         2
       ]
     },
-    "produtos": {
+    "usuarios": {
       "type": "array",
       "default": [],
-      "title": "The produtos Schema",
+      "title": "The usuarios Schema",
       "items": {
         "type": "object",
         "title": "A Schema",
@@ -108,7 +108,7 @@
   },
   "examples": [{
     "quantidade": 2,
-    "produtos": [{
+    "usuarios": [{
       "nome": "Logitech MX Vertical",
       "preco": 470,
       "descricao": "Mouse",

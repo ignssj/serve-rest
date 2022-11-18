@@ -1,13 +1,11 @@
 package models;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor(staticName = "of")
+@ToString(includeFieldNames = true)
 public class Login {
     private String email;
     private String password;

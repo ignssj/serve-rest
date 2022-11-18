@@ -2,6 +2,8 @@ package tests.Produtos.Get;
 
 import builders.ProdutosBuilder;
 import builders.UsuariosBuilder;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.restassured.response.Response;
 import models.Login;
 import models.Produto;
@@ -11,8 +13,7 @@ import org.junit.jupiter.api.*;
 
 import java.util.Locale;
 
-import static constants.EndpointsPaths.LOGIN_ENDPOINT;
-import static constants.EndpointsPaths.USUARIOS_ENDPOINT;
+import static constants.EndpointsPaths.*;
 import static helper.ServiceHelper.matcherJsonSchema;
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
@@ -26,8 +27,6 @@ public class ProdutoGetTest extends TemplateProdutos {
     private static String token;
     private static Produto prod;
     private static Usuario user;
-    private static final String PRODUTOS_ENDPOINT = "/produtos";
-    private static final String PRODUTO_ESPECIFICO_ENDPOINT = "/produtos/{idProduto}";
     private static Faker faker = new Faker(Locale.ENGLISH);
 
     @BeforeAll
@@ -36,7 +35,7 @@ public class ProdutoGetTest extends TemplateProdutos {
         Response response = post(USUARIOS_ENDPOINT,user);
         assertThat(response.statusCode(),is(201));
         user.set_id(response.then().extract().path("_id"));
-        Login login = new Login(user.getEmail(),user.getPassword());
+        Login login = Login.of(user.getEmail(),user.getPassword());
         response = post(LOGIN_ENDPOINT,login);
         token = response.then().extract().path("authorization");
         assertThat(response.statusCode(),is(200));
@@ -56,6 +55,7 @@ public class ProdutoGetTest extends TemplateProdutos {
     }
 
     @Test
+    @Severity(SeverityLevel.MINOR)
     public void deveMostrarTodosProdutos(){
         Response response = get(PRODUTOS_ENDPOINT);
         assertThat(response.asString(),matcherJsonSchema("produtos","get",200));

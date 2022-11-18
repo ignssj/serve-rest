@@ -3,6 +3,7 @@ package tests.Login.Get;
 import io.restassured.response.Response;
 import template.TemplateGeral;
 import org.junit.jupiter.api.Test;
+import template.TemplateLogin;
 
 import static constants.EndpointsPaths.LOGIN_ENDPOINT;
 import static io.restassured.RestAssured.given;
@@ -10,7 +11,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
 
-public class LoginGetTest extends TemplateGeral {
+public class LoginGetTest extends TemplateLogin {
 
 
     @Test

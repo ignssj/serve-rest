@@ -7,6 +7,7 @@ import template.TemplateGeral;
 import io.restassured.response.Response;
 import models.*;
 import org.junit.jupiter.api.Test;
+import template.TemplateUsuarios;
 
 import java.util.Locale;
 
@@ -16,7 +17,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
-public class UsuarioDeleteTest extends TemplateGeral {
+public class UsuarioDeleteTest extends TemplateUsuarios {
     private static Faker faker = new Faker(Locale.ENGLISH);
     private static Usuario user;
     private static Produto prod;
@@ -52,9 +53,7 @@ public class UsuarioDeleteTest extends TemplateGeral {
         String idExtraido = response.then().extract().path("_id");
         user.set_id(idExtraido);
 
-        Login login = new Login();
-        login.setEmail(user.getEmail());
-        login.setPassword(user.getPassword());
+        Login login = Login.of(user.getEmail(),user.getPassword());
 
         response = post(LOGIN_ENDPOINT,login);
         assertThat(response.statusCode(),is(200));

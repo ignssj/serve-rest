@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: tests.Carrinhos.Put.CarrinhosPutTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s - in tests.Carrinhos.Put.CarrinhosPutTest

@@ -1,13 +1,11 @@
 package models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.StandardException;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@ToString(includeFieldNames = true)
 public class Produto {
     private String nome;
     private int preco;

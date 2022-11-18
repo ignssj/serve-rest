@@ -1,15 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: tests.Usuarios.Post.UsuarioPostTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 6.913 s <<< FAILURE! - in tests.Usuarios.Post.UsuarioPostTest
-tests.Usuarios.Post.UsuarioPostTest.deveFalharPostPorHotmail  Time elapsed: 0.904 s  <<< FAILURE!
+Tests run: 8, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.453 s <<< FAILURE! - in tests.Usuarios.Post.UsuarioPostTest
+tests.Usuarios.Post.UsuarioPostTest.deveFalharPostPorHotmail  Time elapsed: 0.045 s  <<< FAILURE!
 java.lang.AssertionError: 
 
 Expected: is <400>
      but: was <201>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at tests.Usuarios.Post.UsuarioPostTest.deveFalharPostPorHotmail(UsuarioPostTest.java:98)
+	at tests.Usuarios.Post.UsuarioPostTest.deveFalharPostPorHotmail(UsuarioPostTest.java:103)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -83,14 +83,14 @@ Expected: is <400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-tests.Usuarios.Post.UsuarioPostTest.deveFalharPostPorSenhaGrande  Time elapsed: 0.906 s  <<< FAILURE!
+tests.Usuarios.Post.UsuarioPostTest.deveFalharPostPorSenhaGrande  Time elapsed: 0.039 s  <<< FAILURE!
 java.lang.AssertionError: 
 
 Expected: is <400>
      but: was <201>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at tests.Usuarios.Post.UsuarioPostTest.deveFalharPostPorSenhaGrande(UsuarioPostTest.java:129)
+	at tests.Usuarios.Post.UsuarioPostTest.deveFalharPostPorSenhaGrande(UsuarioPostTest.java:136)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -164,14 +164,14 @@ Expected: is <400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-tests.Usuarios.Post.UsuarioPostTest.deveFalharPostPorSenhaFraca  Time elapsed: 0.911 s  <<< FAILURE!
+tests.Usuarios.Post.UsuarioPostTest.deveFalharPostPorSenhaFraca  Time elapsed: 0.057 s  <<< FAILURE!
 java.lang.AssertionError: 
 
 Expected: is <400>
      but: was <201>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at tests.Usuarios.Post.UsuarioPostTest.deveFalharPostPorSenhaFraca(UsuarioPostTest.java:113)
+	at tests.Usuarios.Post.UsuarioPostTest.deveFalharPostPorSenhaFraca(UsuarioPostTest.java:119)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -245,14 +245,14 @@ Expected: is <400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-tests.Usuarios.Post.UsuarioPostTest.deveFalharPostPorGmail  Time elapsed: 0.924 s  <<< FAILURE!
+tests.Usuarios.Post.UsuarioPostTest.deveFalharPostPorGmail  Time elapsed: 0.034 s  <<< FAILURE!
 java.lang.AssertionError: 
 
 Expected: is <400>
      but: was <201>
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at tests.Usuarios.Post.UsuarioPostTest.deveFalharPostPorGmail(UsuarioPostTest.java:82)
+	at tests.Usuarios.Post.UsuarioPostTest.deveFalharPostPorGmail(UsuarioPostTest.java:86)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)

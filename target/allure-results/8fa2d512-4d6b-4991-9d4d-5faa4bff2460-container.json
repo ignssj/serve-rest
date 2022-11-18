@@ -1,1 +1,0 @@
-{"uuid":"8fa2d512-4d6b-4991-9d4d-5faa4bff2460","name":"LoginDeleteTest","children":["8ac8e0f0-6482-41d1-b3cf-68988fe9b3bc"],"befores":[{"name":"setUp","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1668109705433,"stop":1668109706460}],"afters":[],"start":1668109705384,"stop":1668109708877}

@@ -1,16 +1,19 @@
 package tests.Usuarios.Post;
 
 import builders.UsuariosBuilder;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.restassured.response.Response;
 import template.TemplateGeral;
 import models.Usuario;
 import org.junit.jupiter.api.Test;
+import template.TemplateUsuarios;
 
 import static constants.EndpointsPaths.USUARIOS_ENDPOINT;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public class UsuarioPostTest extends TemplateGeral {
+public class UsuarioPostTest extends TemplateUsuarios {
 
     private static Usuario user;
 
@@ -70,6 +73,7 @@ public class UsuarioPostTest extends TemplateGeral {
     }
 
     @Test
+    @Severity(SeverityLevel.CRITICAL)
     public void deveFalharPostPorGmail() {
         user = UsuariosBuilder.admUser();
         user.setEmail(UsuariosBuilder.faker.name().firstName()+"@gmail.com");
@@ -84,6 +88,7 @@ public class UsuarioPostTest extends TemplateGeral {
    }
 
     @Test
+    @Severity(SeverityLevel.CRITICAL)
     public void deveFalharPostPorHotmail() {
         user = UsuariosBuilder.admUser();
         user.setEmail(UsuariosBuilder.faker.name().firstName()+"@hotmail.com");
@@ -100,6 +105,7 @@ public class UsuarioPostTest extends TemplateGeral {
     }
 
     @Test
+    @Severity(SeverityLevel.NORMAL)
     public void deveFalharPostPorSenhaFraca() {
         user = UsuariosBuilder.admUser();
         user.setPassword(UsuariosBuilder.faker.internet().password(1,4));
@@ -115,6 +121,7 @@ public class UsuarioPostTest extends TemplateGeral {
     }
 
     @Test
+    @Severity(SeverityLevel.NORMAL)
     public void deveFalharPostPorSenhaGrande() {
         user = UsuariosBuilder.admUser();
         user.setPassword(UsuariosBuilder.faker.internet().password(11,12));

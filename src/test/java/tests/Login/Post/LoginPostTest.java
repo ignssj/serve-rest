@@ -2,11 +2,14 @@ package tests.Login.Post;
 
 import com.github.javafaker.Faker;
 import builders.UsuariosBuilder;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.restassured.response.Response;
 import models.Login;
 import template.TemplateGeral;
 import models.Usuario;
 import org.junit.jupiter.api.*;
+import template.TemplateLogin;
 
 import java.util.Locale;
 
@@ -16,7 +19,7 @@ import static helper.ServiceHelper.matcherJsonSchema;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public class LoginPostTest extends TemplateGeral {
+public class LoginPostTest extends TemplateLogin {
 
     private static String _id;
     private static Usuario user;
@@ -42,7 +45,8 @@ public class LoginPostTest extends TemplateGeral {
     @Test
     public void deveLogarComSucesso() // cadastra usuario, faz login e então exclui o usuário
     {
-        Login login = new Login(user.getEmail(),user.getPassword());
+        Login login = Login.of(user.getEmail(),user.getPassword());
+        System.out.println(login.toString());
         Response response = post(LOGIN_ENDPOINT,login);
         assertThat(response.statusCode(),is(200));
         assertThat(response.asString(),matcherJsonSchema("login","post",200));
@@ -50,9 +54,10 @@ public class LoginPostTest extends TemplateGeral {
     }
 
     @Test
+    @Severity(SeverityLevel.TRIVIAL)
     public void deveFalharPorSenhaIncorreta() // garante que o email tem cadastro e falha por senha invalida
     {
-        Login login = new Login(user.getEmail(),faker.internet().password(5,10));
+        Login login = Login.of(user.getEmail(),faker.internet().password(5,10));
         Response response = post(LOGIN_ENDPOINT,login);
         assertThat(response.asString(),matcherJsonSchema("login","post",400));
         assertThat(response.statusCode(),is(400));
@@ -60,9 +65,10 @@ public class LoginPostTest extends TemplateGeral {
     }
 
     @Test
+    @Severity(SeverityLevel.TRIVIAL)
     public void deveFalharPorEmailNaoCadastrado() // tenta login com senha cadastrada porem email inexistente
     {
-       Login login = new Login(faker.internet().emailAddress(),user.getPassword());
+       Login login = Login.of(faker.internet().emailAddress(),user.getPassword());
        Response response = post(LOGIN_ENDPOINT,login);
        assertThat(response.statusCode(),is(400));
        assertThat(response.body().path("message"),not(equalTo("Login realizado com sucesso")));
@@ -80,7 +86,7 @@ public class LoginPostTest extends TemplateGeral {
     @Test
     public void deveFalharPorSenhaVazia() // falta na documentacao
     {
-        Login login = new Login(user.getEmail(),"");
+        Login login = Login.of(user.getEmail(),"");
         Response response = post(LOGIN_ENDPOINT,login);
         assertThat(response.statusCode(),is(400));
         assertThat(response.body().path("password"),equalTo("password não pode ficar em branco"));
@@ -89,7 +95,7 @@ public class LoginPostTest extends TemplateGeral {
     @Test
     public void deveFalharPorEmailVazio() // falta na documentacao
     {
-        Login login = new Login("",user.getPassword());
+        Login login = Login.of("",user.getPassword());
         Response response = post(LOGIN_ENDPOINT,login);
         assertThat(response.statusCode(),is(400));
         assertThat(response.body().path("email"),equalTo("email não pode ficar em branco"));
@@ -98,7 +104,7 @@ public class LoginPostTest extends TemplateGeral {
     @Test
     public void deveFalharPorCredenciaisVazias() // falta na documentacao
     {
-        Login login = new Login("","");
+        Login login = Login.of("","");
         Response response = post(LOGIN_ENDPOINT,login);
         assertThat(response.statusCode(),is(400));
         assertThat(response.body().path("email"),equalTo("email não pode ficar em branco"));
@@ -108,7 +114,7 @@ public class LoginPostTest extends TemplateGeral {
     @Test
     public void deveLogarDevolvendoBearerToken() // cadastra usuario, faz login e então exclui o usuário
     {
-        Login login = new Login(user.getEmail(),user.getPassword());
+        Login login = Login.of(user.getEmail(),user.getPassword());
         Response response = post(LOGIN_ENDPOINT,login);
         assertThat(response.statusCode(),is(200));
         assertThat(response.body().path("message"),equalTo("Login realizado com sucesso"));

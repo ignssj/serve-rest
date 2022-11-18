@@ -34,7 +34,7 @@ public class ProdutoPutTest extends TemplateProdutos {
         assertThat(response.statusCode(),is(201));
         user.set_id(response.then().extract().path("_id"));
 
-        Login login = new Login(user.getEmail(),user.getPassword());
+        Login login = Login.of(user.getEmail(),user.getPassword());
         response = post(LOGIN_ENDPOINT,login);
         assertThat(response.statusCode(),is(200));
         token = response.then().extract().path("authorization");

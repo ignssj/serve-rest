@@ -1,17 +1,22 @@
 package models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 
-@AllArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
+@ToString(includeFieldNames = true)
 public class Carrinho {
-    private ArrayList produtosIncluidos = new ArrayList<ProdutosDeCarrinho>();
+    private ArrayList produtos = new ArrayList<ProdutosDeCarrinho>();
     @JsonIgnore
     private String _id;
+    @JsonIgnore
+    private int precoTotal;
+    @JsonIgnore
+    private int quantidadeTotal;
+    @JsonIgnore
+    private String idUsuario;
 }

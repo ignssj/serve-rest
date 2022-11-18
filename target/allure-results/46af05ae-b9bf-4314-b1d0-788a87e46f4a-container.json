@@ -1,1 +1,0 @@
-{"uuid":"46af05ae-b9bf-4314-b1d0-788a87e46f4a","name":"deveFalharPostPorHotmail()","children":["fe90d2d7-e131-4322-b4b5-48184016585f"],"befores":[],"afters":[{"name":"deletarUsuario","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1668025415608,"stop":1668025415630}],"start":1668025415581,"stop":1668025415633}

@@ -1,10 +1,15 @@
 package template;
 
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import models.Produto;
 
 import static io.restassured.RestAssured.given;
-
+@Feature("Testes automatizados do endpoint Produtos")
+@Story("Sendo um vendedor de uma loja com cadastro já realizado\n" +
+        "Gostaria de poder me autenticar e cadastrar produtos no Marketplace do ServeRest\n" +
+        "Para poder cadastrar, editar, atualizar e excluir meus produtos")
 public class TemplateProdutos extends TemplateGeral {
 
     public static Response post(String endpoint, Object obj,String token){

@@ -2,10 +2,12 @@ package tests.Usuarios.Put;
 
 import com.github.javafaker.Faker;
 import builders.UsuariosBuilder;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.restassured.response.Response;
-import template.TemplateGeral;
 import models.Usuario;
 import org.junit.jupiter.api.*;
+import template.TemplateUsuarios;
 
 import java.util.Locale;
 
@@ -14,7 +16,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public class UsuarioPutTest extends TemplateGeral {
+public class UsuarioPutTest extends TemplateUsuarios {
     private static String _id;
     private static Usuario user;
     private static Faker faker = new Faker(Locale.ENGLISH);
@@ -76,6 +78,7 @@ public class UsuarioPutTest extends TemplateGeral {
 
 
     @Test
+    @Severity(SeverityLevel.NORMAL)
     public void deveFalharPutSenhaGrande() {
         Usuario usuarioTemporario = UsuariosBuilder.admUser();
         usuarioTemporario.setPassword(faker.internet().password(11,12));
@@ -85,6 +88,7 @@ public class UsuarioPutTest extends TemplateGeral {
     }
 
     @Test
+    @Severity(SeverityLevel.NORMAL)
     public void deveFalharPutSenhaCurta() {
         Usuario usuarioTemporario = UsuariosBuilder.admUser();
         usuarioTemporario.setPassword(faker.internet().password(2,4));
