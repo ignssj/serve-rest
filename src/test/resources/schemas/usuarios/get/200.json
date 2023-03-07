@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "default": {},
+  "title": "Root Schema",
+  "required": [
+    "quantidade",
+    "usuarios"
+  ],
+  "properties": {
+    "quantidade": {
+      "type": "integer",
+      "default": 0,
+      "title": "The quantidade Schema",
+      "examples": [
+        1
+      ]
+    },
+    "usuarios": {
+      "type": "array",
+      "default": [],
+      "title": "The usuarios Schema",
+      "items": {
+        "type": "object",
+        "default": {},
+        "title": "A Schema",
+        "required": [
+          "nome",
+          "email",
+          "password",
+          "administrador",
+          "_id"
+        ],
+        "properties": {
+          "nome": {
+            "type": "string",
+            "default": "",
+            "title": "The nome Schema",
+            "examples": [
+              "Fulano da Silva"
+            ]
+          },
+          "email": {
+            "type": "string",
+            "default": "",
+            "title": "The email Schema",
+            "examples": [
+              "beltrano@qa.com.br"
+            ]
+          },
+          "password": {
+            "type": "string",
+            "default": "",
+            "title": "The password Schema",
+            "examples": [
+              "teste"
+            ]
+          },
+          "administrador": {
+            "type": "string",
+            "default": "",
+            "title": "The administrador Schema",
+            "examples": [
+              "true"
+            ]
+          },
+          "_id": {
+            "type": "string",
+            "default": "",
+            "title": "The _id Schema",
+            "examples": [
+              "0uxuPY0cbmQhpEz1"
+            ]
+          }
+        },
+        "examples": [{
+          "nome": "Fulano da Silva",
+          "email": "beltrano@qa.com.br",
+          "password": "teste",
+          "administrador": "true",
+          "_id": "0uxuPY0cbmQhpEz1"
+        }]
+      },
+      "examples": [
+        [{
+          "nome": "Fulano da Silva",
+          "email": "beltrano@qa.com.br",
+          "password": "teste",
+          "administrador": "true",
+          "_id": "0uxuPY0cbmQhpEz1"
+        }]
+      ]
+    }
+  },
+  "examples": [{
+    "quantidade": 1,
+    "usuarios": [{
+      "nome": "Fulano da Silva",
+      "email": "beltrano@qa.com.br",
+      "password": "teste",
+      "administrador": "true",
+      "_id": "0uxuPY0cbmQhpEz1"
+    }]
+  }]
+}
